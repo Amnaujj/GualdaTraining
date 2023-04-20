@@ -6,7 +6,9 @@ const ROUTE = "https://swapi.dev/api/";
 
 const initialState : FilmState = {
     films: [],
-		characters: []
+		characters: [],
+		charactersFiltered: [],
+		eyeColors: []
 }
 
 export const getFilms = createAsyncThunk('films/fetch', async (thunkAPI) => {
@@ -58,6 +60,21 @@ export const filmsSlice = createSlice({
     name : "films",
     initialState,
     reducers:{
+			deleteCharacters(state) {
+				state.characters = []
+				state.charactersFiltered = []
+			},
+			filterGender: (state, action) => {
+					let filteredGender = state.charactersFiltered.filter(p => p.gender === action.payload)
+					state.charactersFiltered = filteredGender
+			},
+			filterEyes: (state, action) => {
+				let filteredEyes = state.charactersFiltered.filter(p => p.eye_color === action.payload)
+				state.charactersFiltered = filteredEyes
+			},
+			resetFilter(state) {
+				state.charactersFiltered = state.characters
+			}
     },
 		extraReducers: (builder) => {
 			builder.addCase(getFilms.fulfilled, (state,action) => {
@@ -65,8 +82,17 @@ export const filmsSlice = createSlice({
 			});
 			builder.addCase(getCharacters.fulfilled, (state, action) => {
 				state.characters = action.payload
+				state.charactersFiltered = action.payload
+				for( let i:number = 0; i < action.payload.length; i++ ) {
+					let color = state.eyeColors.find( e => e === action.payload[i].eye_color)
+					if( typeof color === 'undefined' ) {
+						state.eyeColors.push(action.payload[i].eye_color)
+					}
+				}
 			})
 		}
 });
+
+export const { deleteCharacters, filterGender, filterEyes, resetFilter } = filmsSlice.actions
 
 export default filmsSlice.reducer;

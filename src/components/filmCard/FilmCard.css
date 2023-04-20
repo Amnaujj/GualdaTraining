@@ -1,0 +1,118 @@
+.FilmCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: 60vh;
+    margin: 10vh 10vh 7vh 10vh;
+    background-color: rgba(175, 176, 182, 0.199);
+    border-radius: 4vh;
+    box-shadow: -1vh 1vh 2vh 1vh rgba(37, 37, 37, 0.644);
+    color: rgb(255, 255, 255);
+}
+.MoviePoster{
+    max-height: 50vh;
+    max-width: 40vh;
+}
+.MovieTitle{
+    font-size: 3em;
+    background: -webkit-linear-gradient(#ebebeb, #d4a60c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.InfoMovie{
+    margin: 0vh 0vh 0vh 20vh;
+    width: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.CharactersBtn{
+    color: rgb(231, 224, 224);
+    font-size: 3vh;
+}
+.CharactersBtn:hover{
+    color: rgb(143, 4, 4);
+}
+
+/* RESPONSIVE */
+@media(max-width: 1288px){
+    .FilmCard{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        height: 60vh;
+        margin: 10vh 10vh 7vh 10vh;
+        background-color: rgba(175, 176, 182, 0.199);
+        border-radius: 3vh;
+        box-shadow: -1vh 1vh 2vh 1vh rgba(37, 37, 37, 0.644);
+        color: rgb(255, 255, 255);
+    }
+    .MoviePoster{
+        max-height: 50vh;
+        max-width: 30vw;
+    }
+    .InfoMovie{
+        margin: 0vh 0vh 0vh 3vw;
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .MovieTitle{
+        font-size: 4vw;
+        background: -webkit-linear-gradient(#ebebeb, #d4a60c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .MovieEandD{
+        font-size: 2.4vw;
+        margin-right: 1vh;
+    }
+    .CharactersBtn{
+        color: rgb(231, 224, 224);
+        font-size: 2.4vw;
+    }
+}
+@media(max-width: 660px){
+    .FilmCard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        height: 80vh;
+        margin: 6vh 7vh 4vh 7vh;
+        background-color: rgba(175, 176, 182, 0.199);
+        border-radius: 3vh;
+        box-shadow: -1vh 1vh 2vh 1vh rgba(37, 37, 37, 0.644);
+        color: rgb(255, 255, 255);
+    }
+    .MoviePoster{
+        max-height: 30vh;
+        max-width: 40vw;
+    }
+    .MovieTitle{
+        font-size: 30px;
+        background: -webkit-linear-gradient(#ebebeb, #d4a60c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .MovieEandD{
+        font-size: 20px;
+    }
+    .InfoMovie{
+        margin: 0vh 0vh 0vh 3vh;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .CharactersBtn{
+        color: rgb(231, 224, 224);
+        font-size: 20px;
+    }
+}

@@ -1,9 +1,17 @@
-import { useAppSelector } from '../../store/store';
+import { useEffect } from 'react';
+import { deleteCharacters } from '../../store/slices/filmsSlice';
+import { useAppDispatch, useAppSelector } from '../../store/store';
 import FilmCard from '../filmCard/FilmCard';
+import './Home.css';
 
 function Home() {
 
+  const dispatch = useAppDispatch()
   const films = useAppSelector((state) => state.films)
+
+  useEffect(() => {
+    dispatch(deleteCharacters())
+},[dispatch])
 
   return (
     <div className='Home'>
