@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 
 export default function FilmCard (props:any) {
-    // console.log(props)
     return (
         <div>
             <h1>{props.name}</h1>

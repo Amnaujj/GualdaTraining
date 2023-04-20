@@ -1,22 +1,23 @@
-import './App.css';
-import { useAppDispatch } from './store/store';
-import { getAllFilms } from './store/slices/filmsSlice';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/home/Home';
 import Characters from './components/characters/Characters';
+import { useAppDispatch } from './store/store';
+import { getFilms } from './store/slices/filmsSlice';
 
 function App() {
 
   const dispatch = useAppDispatch()
-  dispatch(getAllFilms())
+
+  useEffect(() => {
+    dispatch(getFilms())
+  },[dispatch])
 
   return (
-    <div className="App">
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/characters/:id' element={<Characters/>}/>
-      </Routes>
-    </div>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/characters/:id' element={<Characters/>}/>
+    </Routes>
   );
 }
 
