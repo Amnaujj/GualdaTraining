@@ -7,7 +7,7 @@
     height: 60vh;
     margin: 10vh 10vh 7vh 10vh;
     background-color: rgba(175, 176, 182, 0.199);
-    border-radius: 4vh;
+    border-radius: 20px;
     box-shadow: -1vh 1vh 2vh 1vh rgba(37, 37, 37, 0.644);
     color: rgb(255, 255, 255);
 }
@@ -63,20 +63,21 @@
         justify-content: center;
     }
     .MovieTitle{
-        font-size: 4vw;
+        font-size: 22px;
         background: -webkit-linear-gradient(#ebebeb, #d4a60c);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     .MovieEandD{
-        font-size: 2.4vw;
+        font-size: 18px;
         margin-right: 1vh;
     }
     .CharactersBtn{
         color: rgb(231, 224, 224);
-        font-size: 2.4vw;
+        font-size: 18px;
     }
 }
+
 @media(max-width: 660px){
     .FilmCard{
         display: flex;

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { filterEyes, filterGender, getCharacters, resetFilter } from "../../store/slices/filmsSlice";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import CharacterCard from '../characterCard/CharacterCard';
+import './Characters.css';
 
 export default function Characters () {
 
@@ -22,11 +23,6 @@ export default function Characters () {
 	const characters = useAppSelector((state) => state.films.charactersFiltered)
 	const eyeColors = useAppSelector((state) => state.films.eyeColors)
 
-	const handleClick = () => {
-		dispatch(resetFilter())
-		dispatch(filterGender('n/a'))
-	}
-
 	const sortByEyeColor = (e:any) => {
 		dispatch(resetFilter())
 		// var nameChange = document.getElementById("0");
@@ -43,11 +39,11 @@ export default function Characters () {
 	}
 
 	return (
-		<div>
+		<div className='Characters'>
 			<Link to={`/`} style={{ textDecoration: "inherit" }}>
-				<h2>back</h2>
+				<h2 className='BackBtn'>Back</h2>
 			</Link>
-			<div>
+			<div className='Filters'>
 				<select className='filterSelect' id='0' defaultValue="eyeColor" onChange={e => sortByEyeColor(e)}>
 					<option value="eyeColor" disabled>eye color...</option>
 					<option className='filterOptions' value="all">all</option>
@@ -63,15 +59,16 @@ export default function Characters () {
 					<option className='filterOptions' value="n/a">no gender</option>
 				</select>
 			</div>
-			<button onClick={()=> handleClick() }>filter</button>
-			{characters[0]?.name?characters.map((char)=>
-					<CharacterCard
-							key={char.name}
-							name={char.name}
-							eye_color={char.eye_color}
-							gender={char.gender}
-					/>
-			):null}
+			<div className='CharactersContainer'>
+				{characters[0]?.name?characters.map((char)=>
+						<CharacterCard
+								key={char.name}
+								name={char.name}
+								eye_color={char.eye_color}
+								gender={char.gender}
+						/>
+				):null}
+			</div>
 		</div>
 	)
 }

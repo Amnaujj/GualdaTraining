@@ -1,0 +1,42 @@
+.Characters{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    background-color: rgb(61, 61, 61);
+    color: white;
+}
+.BackBtn{
+    position: absolute;
+    left: 3vw;
+    top: 0vh;
+    width: 90px;
+    color: rgb(2, 2, 2);
+    background-color: rgba(255, 255, 255, 0.555);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+.BackBtn:hover{
+    background-color: rgb(27, 27, 27);
+    color: rgb(255, 255, 255);
+}
+.Filters{
+    margin-top: 9vh;
+    align-self: center;
+}
+.filterSelect{
+    margin: 2vh 2vw 0vh 2vw;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 17px;
+    background-color: rgba(255, 255, 255, 0.473);
+}
+.CharactersContainer{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+}
