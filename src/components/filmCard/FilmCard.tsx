@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
+import { deleteCharacters } from "../../store/slices/filmsSlice";
+import { useAppDispatch } from "../../store/store";
 import './FilmCard.css';
 
 export default function FilmCard (props:any) {
+
+    const dispatch = useAppDispatch()
+
+    const handleClick = () => {
+        dispatch(deleteCharacters())
+    }
 
     return (
         <div className="FilmCard">
@@ -17,7 +25,7 @@ export default function FilmCard (props:any) {
                     <h1 className="MovieTitle">{props.name}</h1>
                     <h2 className="MovieEandD">Episode: {props.episode}</h2>
                     <h2 className="MovieEandD">Director: {props.director}</h2>
-                    <Link to={`/characters/${props.id}`} style={{ textDecoration: "inherit" }}>
+                    <Link to={`/characters/${props.id}`} style={{ textDecoration: "inherit" }} onClick={()=>{handleClick()}}>
                         <h2 className="CharactersBtn">All Characters</h2>
                     </Link>
                 </div>

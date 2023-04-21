@@ -40,3 +40,15 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.Loading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    background-color: rgb(61, 61, 61);
+}
+.LoadingGif{
+    height: 20vh;
+    width: 20vh;
+}

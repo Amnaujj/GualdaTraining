@@ -38,6 +38,16 @@ export default function Characters () {
 		}
 	}
 
+	if(typeof characters[0] !== 'object'){
+		return (
+			<div className='Loading'>
+				<Link to={`/`} style={{ textDecoration: "inherit" }}>
+					<h2 className='BackBtn'>Back</h2>
+				</Link>
+				<img src={require('../../assets/Loading2GIF.gif')} alt='img' className='LoadingGif'/>
+			</div>
+		)
+	}
 	return (
 		<div className='Characters'>
 			<Link to={`/`} style={{ textDecoration: "inherit" }}>
