@@ -31,7 +31,6 @@
 }
 .CharactersBtn{
     color: rgb(231, 224, 224);
-    /* font-size: 3vh; */
 }
 .CharactersBtn:hover{
     color: rgb(143, 4, 4);

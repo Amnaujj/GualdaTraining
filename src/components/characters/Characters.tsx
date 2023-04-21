@@ -25,8 +25,6 @@ export default function Characters () {
 
 	const sortByEyeColor = (e:any) => {
 		dispatch(resetFilter())
-		// var nameChange = document.getElementById("0");
-		// nameChange.value = 'name';
 		if( e.target.value !== 'all'){
 			dispatch(filterEyes(e.target.value))
 		}
@@ -55,7 +53,7 @@ export default function Characters () {
 			</Link>
 			<div className='Filters'>
 				<select className='filterSelect' id='0' defaultValue="eyeColor" onChange={e => sortByEyeColor(e)}>
-					<option value="eyeColor" disabled>eye color...</option>
+					<option value="eyeColor" disabled>eyes color...</option>
 					<option className='filterOptions' value="all">all</option>
 					{eyeColors.map(t => 
 						<option className='filterOptions' key={t} value={t}>{t}</option>
