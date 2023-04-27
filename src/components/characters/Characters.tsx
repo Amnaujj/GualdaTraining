@@ -17,7 +17,10 @@ export default function Characters () {
 	const charactersAPI = useAppSelector((state) => state.films.films[filmSelected-1]?.characters)
 
 	useEffect(() => {
-		dispatch(getCharacters(charactersAPI))
+		const promise = dispatch(getCharacters(charactersAPI))
+		return () => {
+			promise.abort()
+		}
 	},[dispatch,charactersAPI])
 
 	const characters = useAppSelector((state) => state.films.charactersFiltered)
@@ -40,7 +43,7 @@ export default function Characters () {
 		return (
 			<div className='Loading'>
 				<Link to={`/`} style={{ textDecoration: "inherit" }}>
-					<h2 className='BackBtn'>Back</h2>
+						<h2 className='BackBtn'>Back</h2>
 				</Link>
 				<img src={require('../../assets/Loading2GIF.gif')} alt='img' className='LoadingGif'/>
 			</div>

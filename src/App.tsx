@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={
+      <Route index element={
         <React.Suspense fallback={
           <div className='Loading'>
             <img src={require('./assets/Loading2GIF.gif')} alt='img' className='LoadingGif'/>
